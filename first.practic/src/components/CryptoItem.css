@@ -1,0 +1,16 @@
+.main {
+    display: flex;
+    background-color: aqua;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+
+}
+
+.title {
+    display: flex;
+    color: rgb(121, 0, 241);
+
+    align-content: center;
+
+}
