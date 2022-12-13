@@ -6,9 +6,11 @@ import Card from "./Card";
 
 function Expenseltem(props) {
     const [title, setTitle] = useState(props.title);
+    console.log("Ex item");
 
     const clickHandler = () => {
         setTitle("Updated");
+        console.log(title);
     };
 
     return (
