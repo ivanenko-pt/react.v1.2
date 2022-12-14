@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 
 import Card from "./Card";
-import ExpensesFilter from "./ExpensesFilter/ExpensesFilter";
-import ExpensesList from "./ExpensesList/ExpensesList";
+import ExpensesFilter from "../ExpensesFilter/ExpensesFilter";
+import ExpensesList from "../ExpensesList/ExpensesList";
 import "./Expenses.css";
 
 function Expenses(props) {
