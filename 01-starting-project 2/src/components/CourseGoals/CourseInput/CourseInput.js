@@ -50,6 +50,7 @@ const CourseInput = (props) => {
 
     const formSubmitHandler = (event) => {
         event.preventDefault();
+
         if (enteredValue.trim().length === 0) {
             setIsValid(false);
             return;
@@ -63,9 +64,9 @@ const CourseInput = (props) => {
                 className={`${styles["form-control"]} ${
                     !isValid && styles.invalid
                 }`}
+
                 /*
                 invalid={!isValid}
-                
               className={!isValid && "invalid"}
               OR
               now TRUE but if input  === 0.then FALSE and add "invalid"
