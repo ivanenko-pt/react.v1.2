@@ -14,13 +14,6 @@ function App(props) {
             ];
         });
         console.log(usersList);
-        // setUsersList((prevUserList) => {
-        //     const updateUserList = [...prevUserList];
-        //     updateUserList.unshift({
-        //         id: Math.random().toString(),
-        //     });
-        //     console.log(updateUserList);
-        // });
     };
 
     return (
