@@ -27,7 +27,7 @@ function App() {
         localStorage.removeItem("isLoggedIn");
         setIsLoggedIn(false);
     };
-
+    //   <AuthContext.Provider value={{ isLoggedIn: isLoggedIn }}> === second isLoggedIn as a State
     return (
         <AuthContext.Provider value={{ isLoggedIn: isLoggedIn }}>
             <MainHeader onLogout={logoutHandler} />
