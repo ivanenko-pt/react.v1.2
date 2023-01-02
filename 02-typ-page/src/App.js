@@ -4,6 +4,7 @@ import Login from "./components/Login/Login";
 import Home from "./components/Home/Home";
 import MainHeader from "./components/MainHeader/MainHeader";
 import AuthContext from "./context/auth-context";
+import { AuthContextProvider } from "./context/auth-context";
 
 function App() {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -27,10 +28,19 @@ function App() {
         localStorage.removeItem("isLoggedIn");
         setIsLoggedIn(false);
     };
-    //   <AuthContext.Provider value={{ isLoggedIn: isLoggedIn }}> === second isLoggedIn as a State
+    /*
+      <AuthContext.Provider value={{ isLoggedIn: isLoggedIn }}> === second isLoggedIn as a State
+     **Everything we tell here is used global, when we are useContext(AuthContext)
+    */
+
     return (
-        <AuthContext.Provider value={{ isLoggedIn: isLoggedIn }}>
-            <MainHeader onLogout={logoutHandler} />
+        <AuthContext.Provider
+            value={{
+                isLoggedIn: isLoggedIn,
+                onLogout: logoutHandler,
+            }}
+        >
+            <MainHeader />
             <main>
                 {!isLoggedIn && <Login onLogin={loginHandler} />}
                 {isLoggedIn && <Home onLogout={logoutHandler} />}
