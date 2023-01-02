@@ -1,12 +1,14 @@
-import React, { useState, useEffect, useReducer } from "react";
+import React, { useState, useReducer } from "react";
 
 import Card from "../UI/Card/Card";
 import classes from "./Login.module.css";
 import Button from "../UI/Button/Button";
 
-// Create inside main func
+// Create outside of the component func
 const emailReducer = (state, action) => {
+    // Send request  dispatchEmail and check info
     if (action.type === `USER_INPUT`) {
+        // val = payload
         return { value: action.val, isValid: action.val.includes("@") };
     }
     if (action.type === "INPUT_BLUR") {
@@ -32,7 +34,6 @@ const Login = (props) => {
     const [enteredPassword, setEnteredPassword] = useState("");
     const [passwordState.isValid, setPasswordIsValid] = useState();
   */
-
     const [formIsValid, setFormIsValid] = useState(false);
 
     // InitialState
@@ -77,7 +78,6 @@ const Login = (props) => {
         setFormIsValid(
             event.target.value.includes("@") && passwordState.isValid
         );
-        console.log(1);
     };
 
     const passwordChangeHandler = (event) => {
@@ -89,13 +89,11 @@ const Login = (props) => {
     };
 
     const validateEmailHandler = () => {
-        // setEmailIsValid(emailState.isValid);
         dispatchEmail({ type: "INPUT_BLUR" });
     };
 
     const validatePasswordHandler = () => {
-        // setPasswordIsValid(enteredPassword.trim().length > 6);
-        dispatchEmail({ type: "INPUT_BLUR" });
+        dispatchPassword({ type: "INPUT_BLUR" });
     };
 
     const submitHandler = (event) => {
