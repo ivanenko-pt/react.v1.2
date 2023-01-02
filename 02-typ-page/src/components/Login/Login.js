@@ -55,8 +55,8 @@ const Login = (props) => {
     //     };
     // }, []);
 
-    const { isValid: emailIsValid } = emailState; // After check inorm not update data
-    const { isValid: passwordIsValid } = passwordState;
+    const { isValid: emailIsValid } = emailState; // Pass specific prop instead of the entire object
+    const { isValid: passwordIsValid } = passwordState; // After check inorm not update data
 
     //Every run when  update state
     useEffect(() => {
