@@ -6,8 +6,8 @@ const AuthContext = React.createContext({
 });
 
 export const AuthContextProvider = (props) => {
-    // const [isLoggedIn, setIsLoggedIn] = useState(false);
-    // return <AuthContext.Provider>{props.children}</AuthContext.Provider>;
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+    return <AuthContext.Provider>{props.children}</AuthContext.Provider>;
 };
 
 export default AuthContext;
