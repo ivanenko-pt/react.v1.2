@@ -28,7 +28,7 @@ const passwordReducer = (state, action) => {
     return { value: "", isValid: false };
 };
 
-const Login = (props) => {
+const Login = () => {
     const ctx = useContext(AuthContext);
     /*Use state
     const [enteredEmail, setEnteredEmail] = useState("");
@@ -67,6 +67,7 @@ const Login = (props) => {
             console.log(`Chekcking form`);
             setFormIsValid(emailIsValid && passwordIsValid);
         }, 500);
+
         return () => {
             // Cleanup fucnc
             console.log(`CLEANUP`);
